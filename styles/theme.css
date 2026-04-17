@@ -1,0 +1,296 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #D4A574;
+  --foreground: #FFFEF9;
+  --card: #FFFEF9;
+  --card-foreground: #3D2817;
+  --popover: #FFFEF9;
+  --popover-foreground: #3D2817;
+  --primary: #8B2635;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E8D4A8;
+  --secondary-foreground: #3D2817;
+  --muted: #D4C4A8;
+  --muted-foreground: #F5E6D3;
+  --accent: #D9B98D;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.2);
+  --input: transparent;
+  --input-background: #FFFEF9;
+  --switch-background: #E8D4A8;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #8B2635;
+  --chart-1: #8B2635;
+  --chart-2: #D9B98D;
+  --chart-3: #E8D4A8;
+  --chart-4: #F5E6D3;
+  --chart-5: #A05061;
+  --radius: 0.75rem;
+  --sidebar: #8B2635;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #D9B98D;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #A05061;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #D9B98D;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html, body, #root {
+    background: linear-gradient(135deg, #8B2635 0%, #F4E4C1 100%) !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+  }
+
+  body {
+    @apply text-foreground;
+    background: linear-gradient(135deg, #8B2635 0%, #F4E4C1 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #FFFEF9;
+  }
+
+  /* ========== DEFAULT PAGE TEXT - LIGHT ON DARK BACKGROUND ========== */
+  h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  p, span, div, li, a {
+    color: #F5E6D3 !important;
+  }
+
+  label, button {
+    color: #FFFEF9 !important;
+  }
+
+  /* ========== LIGHT BACKGROUND COMPONENTS - DARK TEXT ========== */
+  
+  /* Cards and light backgrounds */
+  .card, [class*="Card"], .bg-card, .bg-white, .bg-white\/95, .bg-slate-50, .bg-gray-50,
+  table, [class*="calendar"], [class*="Calendar"], .calendar,
+  [class*="table"], [class*="Table"],
+  [class*="modal"], [class*="Modal"], .modal,
+  [class*="dialog"], [class*="Dialog"], .dialog,
+  [class*="dropdown"], [class*="Dropdown"],
+  [class*="popover"], [class*="Popover"],
+  [class*="toast"], [class*="Toast"],
+  [class*="sheet"], [class*="Sheet"],
+  input, textarea, select, form {
+    color: #3D2817 !important;
+  }
+
+  /* ALL text content inside light backgrounds must be dark */
+  .card, [class*="Card"], .bg-card, .bg-white, .bg-white\/95, .bg-slate-50, .bg-gray-50 {
+    background-color: #FFFEF9 !important;
+  }
+
+  .card *, [class*="Card"] *, .bg-card *, .bg-white *, .bg-white\/95 *, .bg-slate-50 *, .bg-gray-50 *,
+  table *, [class*="calendar"] *, [class*="Calendar"] *, .calendar *,
+  [class*="table"] *, [class*="Table"] *,
+  [class*="modal"] *, [class*="Modal"] *, .modal *,
+  [class*="dialog"] *, [class*="Dialog"] *, .dialog *,
+  [class*="dropdown"] *, [class*="Dropdown"] *,
+  [class*="popover"] *, [class*="Popover"] *,
+  [class*="toast"] *, [class*="Toast"] *,
+  [class*="sheet"] *, [class*="Sheet"] * {
+    color: #3D2817 !important;
+    text-shadow: none !important;
+  }
+
+  /* Force dark text on light backgrounds - ALL element types */
+  input, textarea, select, 
+  input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="tel"],
+  button:not(.bg-\[\#8B2635\]):not(.bg-maroon),
+  label, p, span, a, h1, h2, h3, h4, h5, h6, li, div {
+    color: #3D2817 !important;
+  }
+
+  /* Form inputs styling - MUST override Tailwind utilities */
+  input[type="text"], input[type="email"], input[type="password"], input[type="search"], input[type="tel"],
+  textarea, select {
+    background-color: #FFFEF9 !important;
+    color: #3D2817 !important;
+    border-color: #D4A574 !important;
+  }
+
+  input[type="text"]::placeholder, input[type="email"]::placeholder, 
+  input[type="password"]::placeholder, input[type="search"]::placeholder, input[type="tel"]::placeholder,
+  textarea::placeholder {
+    color: #9C8B7E !important;
+    opacity: 1 !important;
+  }
+
+  /* Override Tailwind text utilities on light backgrounds */
+  .bg-white .text-foreground,
+  .bg-white\/95 .text-foreground,
+  .bg-slate-50 .text-foreground,
+  .bg-gray-50 .text-foreground,
+  .card .text-foreground {
+    color: #3D2817 !important;
+  }
+
+  /* Ensure input text is always dark */
+  input::placeholder {
+    color: #9C8B7E !important;
+  }
+
+  /* Sidebar - dark background, light text */
+  [class*="sidebar"], [class*="Sidebar"], .sidebar {
+    background-color: #8B2635 !important;
+    color: #FFFFFF !important;
+  }
+
+  [class*="sidebar"] *, [class*="Sidebar"] *, .sidebar * {
+    color: #FFFFFF !important;
+  }
+
+  [class*="sidebar"] h1, [class*="Sidebar"] h1, [class*="sidebar"] h2, [class*="Sidebar"] h2 {
+    color: #FFFFFF !important;
+  }
+
+  /* Navbar - dark background, light text */
+  nav, [class*="navbar"], [class*="Navbar"] {
+    background-color: #8B2635 !important;
+    color: #FFFFFF !important;
+  }
+
+  nav *, [class*="navbar"] *, [class*="Navbar"] * {
+    color: #FFFFFF !important;
+  }
+
+  /* Default typography */
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
