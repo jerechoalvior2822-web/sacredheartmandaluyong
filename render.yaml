@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: sacred-heart-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node backend/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - path: /
+        destination: /
+
+databases:
+  - name: sacred-heart-mysql
+    engine: mysql
+    version: "8.0"
+    plan: starter
